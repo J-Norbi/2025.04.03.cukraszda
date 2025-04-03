@@ -25,15 +25,19 @@
         </Style>
         
     </Window.Resources>
-    
-    
+        
     <Grid Background="#FFF085">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1" Height="200">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Üdvözöllek a Pelikán Cukrászdában" Grid.ColumnSpan="3" FontSize="30" Cursor="Arrow"/>
+        <Grid Grid.Column="1" Grid.Row="1" Height="200">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
