@@ -27,6 +27,24 @@ namespace _2025._04._03._cukrászda
             connection = new ServerConnection("http://127.1.1.1:3000");
             
         }
+        void OnFocus(object s, EventArgs e)
+        {
+            TextBox oneTextBox = s as TextBox;
+            if(oneTextBox.Text == oneTextBox.Tag.ToString())
+            {
+                oneTextBox.Clear();
+                oneTextBox.Foreground = new SolidColorBrush(Colors.Black);
+            }
+        }
+        void OffFocus(object s, EventArgs e)
+        {
+            TextBox oneTextBox = s as TextBox;
+            if(oneTextBox.Text == "")
+            {
+                oneTextBox.Text = oneTextBox.Tag.ToString();
+                oneTextBox.Foreground = new SolidColorBrush(Colors.LightSlateGray);
+            }
+        }
         async void AddCake(Object s, EventArgs e)
         {
             Cake oneCake = new Cake()

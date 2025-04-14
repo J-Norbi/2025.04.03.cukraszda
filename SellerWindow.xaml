@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2025._04._03._cukrászda"
         mc:Ignorable="d"
-        Title="SellerWindow" Height="450" Width="800">
+        Title="SellerWindow" Height="450" Width="500">
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -15,9 +15,9 @@
         <Style TargetType="TextBox">
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontSize" Value="15"/>
             <Setter Property="Background" Value="AliceBlue"/>
-            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Margin" Value="100 10"/>
         </Style>
     </Window.Resources>
     <Grid>
@@ -33,18 +33,15 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Content="Süti létrehozása" Grid.ColumnSpan="2"/>
-        <Label/>
-        <Label/>
-        <Label/>
-        <TextBox Grid.Row="1" Grid.Column="1" Name="NameInput" Text="Dobostorta"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Name="PictureInput" Text="http://daubnercukraszda.hu/sites/default/files/imagecache/node350/nosztalgia_dobos_tortaszelet_1.png"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Name="DescriptionInput" Text=""/>
-        <TextBox Grid.Row="4" Grid.Column="1" Name="AllergenesInput" Text="glutén"/>
-        <TextBox Grid.Row="5" Grid.Column="1" Name="PriceInput" Text="1000"/>
-        <TextBox Grid.Row="6" Grid.Column="1" Name="StockInput" Text="10"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="Süti létrehozása" GotFocus="OnFocus" LostFocus="OffFocus"/>
+        
+        <TextBox Grid.Row="1" Grid.Column="1" Name="NameInput" Tag="Torta neve" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="PictureInput" Tag="Kép linkje" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Name="DescriptionInput" Tag="Leírás" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Name="AllergenesInput" Tag="Allergén információ" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Name="PriceInput" Tag="Ára" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
+        <TextBox Grid.Row="6" Grid.Column="1" Name="StockInput" Tag="Mennyisége" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
         <Button Grid.Row="7" Grid.ColumnSpan="2" Content="Sütemény létrehozása" Click="AddCake"/>
     </Grid>
 </Window>
