@@ -20,13 +20,14 @@ namespace _2025._04._03._cukrászda
     /// </summary>
     public partial class MainWindow : Window
     {
+        ServerConnection connection = new ServerConnection("http://127.1.1.1:3000");
         public MainWindow()
         {
             InitializeComponent();
         }
         void Buyer(object s, EventArgs e)
         {
-            BuyerWindow b = new BuyerWindow() { Top = this.Top, Left = this.Left, Visibility = Visibility.Visible};
+            BuyerWindow b = new BuyerWindow(connection) { Top = this.Top, Left = this.Left, Visibility = Visibility.Visible};
             this.Close();
         }
         void Seller(object s, EventArgs e)

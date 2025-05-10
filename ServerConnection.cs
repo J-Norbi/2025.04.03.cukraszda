@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace _2025._04._03._cukrászda
 {
-    internal class ServerConnection
+    public class ServerConnection
     {
         private HttpClient client = new HttpClient();
         private string baseURL = "";
@@ -21,7 +21,6 @@ namespace _2025._04._03._cukrászda
         {
             List<Cake> all = new List<Cake>();
             string url = baseURL + "/cake";
-
             try
             {
                 HttpResponseMessage response = await client.GetAsync(url);

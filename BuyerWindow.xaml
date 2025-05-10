@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2025._04._03._cukrászda"
         mc:Ignorable="d"
-        Title="BuyerWindow" Height="500" Width="800">
+        Title="BuyerWindow" Height="600" Width="800">
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -42,30 +42,26 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="3" Content="Bejelentkezés" FontSize="25" Cursor="Hand" BorderBrush="Black" BorderThickness="1"/>
-            <Label Grid.Column="2" Content="Kosár" FontSize="25" Cursor="Hand" BorderBrush="Black" BorderThickness="1"/>
-            <Label Grid.Column="1" Content="Rólunk" FontSize="25" Cursor="Hand" BorderBrush="Black" BorderThickness="1"/>
             <Label Grid.Column="0" Content="Termékek" FontSize="25" Cursor="Hand" BorderBrush="Black" BorderThickness="1"/>
+            <Label Grid.Column="1" Content="Rólunk" FontSize="25" Cursor="Hand" BorderBrush="Black" BorderThickness="1"/>
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.ColumnSpan="2" Content="Kosár" FontSize="25" Cursor="Hand" BorderBrush="Black" BorderThickness="1"/>
+                <Border Grid.Column="1" Width="30" Margin="33 13 0 13" CornerRadius="10" Name="CartBorder" Background="White" Cursor="Hand">
+                    <Label Name="CartNumber" FontSize="20" Foreground="White"/>
+                </Border>
+            </Grid>
+            <Label Grid.Column="3" Content="Bejelentkezés" FontSize="25" Cursor="Hand" BorderBrush="Black" BorderThickness="1"/>
         </Grid>
         <Grid Grid.Row="2">
             <Grid.Background>
                 <SolidColorBrush Color="Goldenrod" Opacity="0.1"/>
             </Grid.Background>
             <WrapPanel Name="Items" Orientation="Horizontal">
-                <Grid Height="180" Width="120" Margin="10" Background="Bisque">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition Height="3*"/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Label Content="Házi francia krémes"/>
-                    <Image Grid.Row="1" Source="http://daubnercukraszda.hu/sites/default/files/imagecache/node350/hazi_francia_kremes_0.png"/>
-                    <Label Grid.Row="2" Content="1000 Ft/db"/>
-                    <Border Grid.Row="3">
-                        <Label Content="Kosárba" Cursor="Hand" MouseLeftButtonUp="Buy"/>
-                    </Border>
-                </Grid>
+               
             </WrapPanel>
         </Grid>
     </Grid>

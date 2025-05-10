@@ -22,6 +22,7 @@ namespace _2025._04._03._cukrászda
         public string allergenes { get; set; }
         public int price { get; set; }
         public int stock { get; set; }
+        public int orderCount { get; set; }
         public string message { get; set; }
     }
 }
