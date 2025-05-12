@@ -31,9 +31,6 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="Süti létrehozása" GotFocus="OnFocus" LostFocus="OffFocus"/>
         
         <TextBox Grid.Row="1" Grid.Column="1" Name="NameInput" Tag="Torta neve" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
@@ -42,6 +39,13 @@
         <TextBox Grid.Row="4" Grid.Column="1" Name="AllergenesInput" Tag="Allergén információ" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
         <TextBox Grid.Row="5" Grid.Column="1" Name="PriceInput" Tag="Ára" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
         <TextBox Grid.Row="6" Grid.Column="1" Name="StockInput" Tag="Mennyisége" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
-        <Button Grid.Row="7" Grid.ColumnSpan="2" Content="Sütemény létrehozása" Click="AddCake"/>
+        <Grid Grid.Row="7" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Sütemény létrehozása" Click="AddCake"/>
+            <Button Grid.Column="1" Content="Mégse" Click="Cancel"/>
+        </Grid>
     </Grid>
 </Window>

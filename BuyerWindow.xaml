@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2025._04._03._cukrászda"
         mc:Ignorable="d"
-        Title="BuyerWindow" Height="600" Width="800">
+        Title="BuyerWindow" Height="550" Width="950">
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -49,7 +49,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.ColumnSpan="2" Content="Kosár" FontSize="25" Cursor="Hand" BorderBrush="Black" BorderThickness="1"/>
+                <Label Grid.ColumnSpan="2" Content="Kosár" FontSize="25" Cursor="Hand" BorderBrush="Black" BorderThickness="1"  MouseLeftButtonUp="CartClick"/>
                 <Border Grid.Column="1" Width="30" Margin="33 13 0 13" CornerRadius="10" Name="CartBorder" Background="White" Cursor="Hand">
                     <Label Name="CartNumber" FontSize="20" Foreground="White"/>
                 </Border>

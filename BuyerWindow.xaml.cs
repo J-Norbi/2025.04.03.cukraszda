@@ -79,10 +79,21 @@ namespace _2025._04._03._cukrászda
                 else
                 {
                     BuyBorder.Background = new SolidColorBrush(Colors.AliceBlue);
+                    BuyLabel.Content = "Elfogyott";
                 }
 
                 Items.Children.Add(oneCake);
             }
+        }
+        async void CartClick(object s, EventArgs e)
+        {
+            //MessageBox.Show("jó");
+            if(Cart.cart.Count == 0)
+            {
+                MessageBox.Show("Nem vettél még semmit");
+                return;
+            }
+            await connection.BuyCakes();
         }
         void CartChanged(object sender, EventArgs e)
         {

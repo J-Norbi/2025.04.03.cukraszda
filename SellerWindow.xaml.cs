@@ -58,5 +58,10 @@ namespace _2025._04._03._cukrászda
             };
             await connection.PostCake(oneCake);
         }
+        void Cancel(object s, EventArgs e)
+        {
+            MainWindow b = new MainWindow() { Top = this.Top, Left = this.Left, Visibility = Visibility.Visible };
+            this.Close();
+        }
     }
 }
