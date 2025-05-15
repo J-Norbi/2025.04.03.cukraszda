@@ -127,5 +127,58 @@ namespace _2025._04._03._cukrászda
 
             return true;
         }
+        public async Task<bool> RestockCake(Cake oneCake)
+        {
+            string url = baseURL + "/restockCake";
+
+            try
+            {
+                var jsonData = new
+                {
+                    id = oneCake.id,
+                    cakeCount = oneCake.orderCount
+                };
+                string jsonString = JsonConvert.SerializeObject(jsonData);
+                StringContent sendThis = new StringContent(jsonString, Encoding.UTF8, "Application/JSON");  // soha nem a jsonStringet küldjük, mert még adok neki plusz két információt.
+                HttpResponseMessage response = await client.PostAsync(url, sendThis);
+                response.EnsureSuccessStatusCode();     // ha van lekezeletlen hibánk, akkor futás leáll és kiírja, hogy mi a hiba, mert van a catch-be egy message kiírásunk.
+                string responseString = await response.Content.ReadAsStringAsync();
+                Message successCake = JsonConvert.DeserializeObject<Message>(responseString);
+                MessageBox.Show(successCake.message, "Siker :)");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
+            }
+
+            return true;
+        }
+        public async Task<bool> RestockCakes()
+        {
+            string url = baseURL + "/restockCakes";
+
+            try
+            {
+                var jsonData = new
+                {
+                    cakes = Cart.delivery.Select(cake => new { id = cake.id, cakeCount = cake.orderCount })
+                };
+                string jsonString = JsonConvert.SerializeObject(jsonData);
+                StringContent sendThis = new StringContent(jsonString, Encoding.UTF8, "Application/JSON");  // soha nem a jsonStringet küldjük, mert még adok neki plusz két információt.
+                HttpResponseMessage response = await client.PostAsync(url, sendThis);
+                response.EnsureSuccessStatusCode();     // ha van lekezeletlen hibánk, akkor futás leáll és kiírja, hogy mi a hiba, mert van a catch-be egy message kiírásunk.
+                string responseString = await response.Content.ReadAsStringAsync();
+                Message successCake = JsonConvert.DeserializeObject<Message>(responseString);
+                MessageBox.Show(successCake.message, "Siker :)");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
+            }
+
+            return true;
+        }
     }
 }

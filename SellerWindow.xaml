@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2025._04._03._cukrászda"
         mc:Ignorable="d"
-        Title="SellerWindow" Height="450" Width="500">
+        Title="SellerWindow" Height="450" Width="1000">
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -17,35 +17,51 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Background" Value="AliceBlue"/>
-            <Setter Property="Margin" Value="100 10"/>
+            <Setter Property="Margin" Value="80 10"/>
         </Style>
     </Window.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Content="Süti létrehozása" GotFocus="OnFocus" LostFocus="OffFocus"/>
-        
-        <TextBox Grid.Row="1" Grid.Column="1" Name="NameInput" Tag="Torta neve" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Name="PictureInput" Tag="Kép linkje" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Name="DescriptionInput" Tag="Leírás" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Name="AllergenesInput" Tag="Allergén információ" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
-        <TextBox Grid.Row="5" Grid.Column="1" Name="PriceInput" Tag="Ára" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
-        <TextBox Grid.Row="6" Grid.Column="1" Name="StockInput" Tag="Mennyisége" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
-        <Grid Grid.Row="7" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Button Content="Sütemény létrehozása" Click="AddCake"/>
-            <Button Grid.Column="1" Content="Mégse" Click="Cancel"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="400"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Label Content="Készlet frissítés"/>
+            <StackPanel Grid.Row="1" Name="cakeList"/>
+            <Button Grid.Row="2" Content="Mentés" Click="Save" Margin="10 2" Width="200" HorizontalAlignment="Right"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Sütemény létrehozása" GotFocus="OnFocus" LostFocus="OffFocus"/>
+
+            <TextBox Grid.Row="1" Grid.Column="1" Name="NameInput" Tag="Torta neve" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="PictureInput" Tag="Kép linkje" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Name="DescriptionInput" Tag="Leírás" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Name="AllergenesInput" Tag="Allergén információ" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Name="PriceInput" Tag="Ára" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Name="StockInput" Tag="Mennyisége" GotFocus="OnFocus" LostFocus="OffFocus" Loaded="OffFocus"/>
+            <Grid Grid.Row="7" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Sütemény létrehozása" Click="AddCake"  Margin="10 2"/>
+                <Button Grid.Column="1" Content="Mégse" Click="Cancel" Margin="10 2"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
